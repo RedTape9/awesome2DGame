@@ -1,14 +1,19 @@
 package org.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerCharacterTest {
+    private PlayerCharacter newPlayer;
+        @BeforeEach
+        void setUp() {
+            newPlayer = new PlayerCharacter();
+        }
 
     @Test
     void return0_whenGetXReturns0() {
-        PlayerCharacter newPlayer = new PlayerCharacter();
         int expected = 0;
         int actual = newPlayer.getX();
         assertEquals(expected, actual);
@@ -16,7 +21,6 @@ class PlayerCharacterTest {
 
     @Test
     void return0_whenGetYReturns0() {
-        PlayerCharacter newPlayer = new PlayerCharacter();
         int expected = 0;
         int actual = newPlayer.getY();
         assertEquals(expected, actual);
@@ -24,7 +28,6 @@ class PlayerCharacterTest {
 
     @Test
     void returnIncrementedY_whenMoveArgumentIsW() {
-        PlayerCharacter newPlayer = new PlayerCharacter();
         //GIVEN
         int expected = newPlayer.getY() + 1;
         //WHEN
@@ -36,7 +39,6 @@ class PlayerCharacterTest {
 
     @Test
     void returnIncrementedX_whenMoveArgumentIsD() {
-        PlayerCharacter newPlayer = new PlayerCharacter();
         //GIVEN
         int expected = newPlayer.getX() + 1;
         //WHEN

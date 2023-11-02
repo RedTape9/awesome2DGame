@@ -1,8 +1,8 @@
 package org.example;
 
 public class PlayerCharacter {
-    protected int x = 0;
-    protected int y = 0;
+    private int x = 0;
+    private int y = 0;
 
     public int getX() {
         return x;
@@ -12,11 +12,16 @@ public class PlayerCharacter {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        PlayerCharacter player = new PlayerCharacter();
+        player.move("w");
+        player.move("w");
+        player.move("w");
+        System.out.println(player.getY());
     }
     public void move(String input) {
         String normolizedString = input.toLowerCase();
-        if (normolizedString.equals("w")) {
+        /*if (normolizedString.equals("w")) {
             y++;
         }
         if (normolizedString.equals("d")) {
@@ -27,6 +32,21 @@ public class PlayerCharacter {
         }
         if (normolizedString.equals("a")) {
             x--;
+        }*/
+        // Refactoring mit switch
+        switch (normolizedString) {
+            case "w":
+                y++;
+                break;
+            case "d":
+                x++;
+                break;
+            case "s":
+                y--;
+                break;
+            case "a":
+                x--;
+                break;
         }
     }
 }
