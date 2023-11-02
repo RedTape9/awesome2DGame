@@ -22,5 +22,17 @@ class PlayerCharacterTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void returnIncrementedY_whenMoveArgumentIsW() {
+        PlayerCharacter newPlayer = new PlayerCharacter();
+        //GIVEN
+        int expected = newPlayer.getY() + 1;
+        //WHEN
+        newPlayer.move("w");
+        int actual = newPlayer.getY();
+        //THEN
+        assertEquals(expected, actual);
+    }
+
 
 }
