@@ -34,5 +34,41 @@ class PlayerCharacterTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void returnIncrementedX_whenMoveArgumentIsD() {
+        PlayerCharacter newPlayer = new PlayerCharacter();
+        //GIVEN
+        int expected = newPlayer.getX() + 1;
+        //WHEN
+        newPlayer.move("d");
+        int actual = newPlayer.getX();
+        //THEN
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void returnDecrementedY_whenMoveArgumentIsS() {
+        PlayerCharacter newPlayer = new PlayerCharacter();
+        //GIVEN
+        int expected = newPlayer.getY() - 1;
+        //WHEN
+        newPlayer.move("s");
+        int actual = newPlayer.getY();
+        //THEN
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void returnDecrementedX_whenMoveArgumentIsA() {
+        PlayerCharacter newPlayer = new PlayerCharacter();
+        //GIVEN
+        int expected = newPlayer.getX() - 1;
+        //WHEN
+        newPlayer.move("a");
+        int actual = newPlayer.getX();
+        //THEN
+        assertEquals(expected, actual);
+    }
+
 
 }

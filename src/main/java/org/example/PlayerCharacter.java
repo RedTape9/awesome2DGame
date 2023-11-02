@@ -14,10 +14,19 @@ public class PlayerCharacter {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
-    public void move(String w) {
-        String normolizedString = w.toLowerCase();
+    public void move(String input) {
+        String normolizedString = input.toLowerCase();
         if (normolizedString.equals("w")) {
             y++;
+        }
+        if (normolizedString.equals("d")) {
+            x++;
+        }
+        if (normolizedString.equals("s")) {
+            y--;
+        }
+        if (normolizedString.equals("a")) {
+            x--;
         }
     }
 }
