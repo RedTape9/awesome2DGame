@@ -15,6 +15,9 @@ public class PlayerCharacter {
         System.out.println("Hello world!");
     }
     public void move(String w) {
-        y++;
+        String normolizedString = w.toLowerCase();
+        if (normolizedString.equals("w")) {
+            y++;
+        }
     }
 }
